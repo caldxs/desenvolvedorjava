@@ -1,9 +1,15 @@
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.FileWriter; //classe para escrever no arquivo 
+import java.io.IOException; // classe para tratar exerções do arquivo 
 import java.util.Scanner;
 
+import javax.imageio.IIOException;  
+
 public class App {
-    public static void main(String[] args) throws Exception {
+    /**
+ * @param args
+ * @throws Exception
+ */
+public static void main(String[] args) throws Exception {
         //declaração de variáveis 
 
         String nome; //refência 
@@ -47,33 +53,23 @@ public class App {
                
                
        }
-     System.out.println("nome:" +nome+ ","+ "Meio do transporte: " + meioTransporte);
+       System.out.println("nome:" +nome+ ","+ "Meio do transporte: " + meioTransporte);
 
+       try(FileWriter escritor = new FileWriter("dados.txt", true)){
+        
+         escritor.write(nome+","+ meioTransporte + "\n");
+         System.out.println("dados gravados com sucesso");
 
+       }catch(IOException e){
 
-
-
-
-
-
-
+              System.out.println("Erro ao gravar os dados"+e.getMessage());
+       }
+       }
+}       
         //exercicio
         //faça como eu fiz 
         //leia a opção opcaoTranposrte e mostre a opção lida
          
 
-        //text de amanhã salvar os dados no arquivo.
-        // vamos salvarno (git e github)
-
-
-
-
-
-
-
-
-
-
-        
-    }
-}
+        //text de amanhã salvar os dados no arquivo
+        // vamos salvar no (git e github)  
