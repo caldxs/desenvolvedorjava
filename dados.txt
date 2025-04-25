@@ -1,2 +1,4 @@
 luan,Ônibus
 luan,Caminhada
+luan,Ônibus
+luan,Carro
